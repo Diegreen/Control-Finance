@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control Finance</title>
+  <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Control Finance - Seu controle financeiro" />
+  <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+  <link rel="stylesheet" href="./src/styles/index.css" />
+  <link rel="stylesheet" href="./src/styles/modal.css">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navigation">
+      <h1>Control<span> Finance</span></h1>
+      <button class="insert-value">Registrar novo valor</button>
+    </nav>
+  </header>
+  <main id="app">
+    <dialog class="modal__controller">
+      <form class="modal__container" id="addExpenseToArray">
+        <h1>Registro de valor</h1>
+        <button class="modal__closeModal">X</button>
+        <p>Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
+        <section class="modal__inputValue">
+          <label for="register-value-on-modal">Valor</label>
+          <input name="valueInput" type="text" class="input_valueModal" id="register-value-on-modal" placeholder="R$ 00,00"  required>
+        </section>
+        <section class="modal__valueType">
+          <h2>Tipos de valor</h2>
+          <div class="modal__isEntry">
+            <input type="radio" name="isEntryInput" value="0" id="entryRadio" />
+            <input type="radio" name="isEntryInput" value="1" id="expenseRadio" />
+          </div>
+        </section>
+        <div class="modal__submit">
+          <button class="modal__cancelValue">Cancelar</button>
+          <button class="modal__insertValue" type="submit">Inserir valor</button>
+        </div>
+      </form>
+    </dialog>   
+    <nav class="resume__finance">
+      <h2>Resumo financeiro</h2>
+      <div class="filter">
+        <button value="2" id="nonFilter" class="filter__finance active">Todos</button>
+        <button value="1" id="entryFilter" class="filter__finance">Entradas</button>
+        <button value="0" id="expenseFilter" class="filter__finance">Saídas</button>
+      </div>
+    </nav>
+    <section class="sum__values">
+      <h3>Soma dos Valores</h3>
+      <span id="totalValue"></span> 
+    </section>
+    <section class="list__values"></section>
+  </main>
+  <script src="./src/scripts/modal.js" defer></script>
+  <script src="./src/scripts/valuesData.js" defer></script>
+  <script type="module" src="./src/scripts/index.js" defer></script>
+</body>
+</html>

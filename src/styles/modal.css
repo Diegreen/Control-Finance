@@ -1,0 +1,216 @@
+@import url("./globalStyles.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@600&display=swap");
+
+.modal__controller {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: transparent;
+
+    align-items: flex-start;
+    justify-content: center;
+    border: none;
+    
+    font-family: var(--font-family-1);
+}
+
+.modal__controller::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal__controller.active {
+    display: flex;
+}
+
+.modal__container {
+    padding: 1.3rem;
+    background-color: var(--fixed-white);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.modal__container>h1 {
+    font-size: 1rem;
+}
+
+.modal__container>.modal__closeModal {
+    position: absolute;
+    left: 90%;
+    top: 6.5%;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--color-brand-1);
+}
+
+.modal__container>p {
+    font-size: 0.87rem;
+    font-weight: var(--font-weight-3);
+}
+
+.modal__inputValue {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: var(--font-weight-2);
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.input_valueModal {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1px solid var(--color-grey-3);
+}
+
+.input_valueModal:hover {
+    border-color: var(--color-brand-1);
+}
+
+.modal__valueType {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-weight: 500;
+}
+
+.modal__valueType > h2 {
+    font-size: 0.9rem;
+}
+
+.modal__isEntry {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+
+.modal__valueType .modal__isEntry input {
+    position: relative;
+    display: block;
+    height: 30px;
+}
+
+.modal__valueType .modal__isEntry input::after {
+    content: 'Saída';
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1.5px solid var(--color-grey-3);
+    border-radius: 10px;
+    color: var(--color-gray-2);
+    
+    background-color: white;
+}
+
+.modal__valueType .modal__isEntry input#entryRadio::after {
+    content: 'Entrada';
+}
+
+.modal__valueType .modal__isEntry input:checked::after {
+    background-color: var(--color-brand-2);
+    border-color: var(--color-brand-2);
+    color: var(--fixed-white);
+}
+
+.modal__valueType .modal__isEntry .modal__isEntryButton {
+    padding: 0.4rem;
+    border: transparent;
+    font-weight: 500;
+    font-size: 0.9rem;
+    font-family: var(--font-family-1);
+    cursor: pointer;
+}
+
+.modal__valueType .modal__isEntry .modal__isEntryButton:hover {
+    background-color: var(--color-brand-1);
+    border-radius: var(--radius-1);
+    color: var(--fixed-white);
+}
+
+.modal__submit {
+    text-align: center;
+}
+
+.modal__insertValue,
+.modal__cancelValue {
+    font-family: var(--font-family-1);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: var(--color-brand-1);
+    border: 1px solid transparent;
+    color: var(--fixed-white);
+    padding: 0.5rem 1.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal__insertValue:hover {
+    background-color: var(--color-brand-2);
+}
+
+.modal__cancelValue {
+    background-color: white;
+    color: black;
+}
+
+.modal__cancelValue:hover {
+    background-color: var(--color-grey-3);
+}
+
+.modal__closeModal {
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+@media (min-width: 768px) {
+    .modal__valueType {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .modal__isEntry {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .modal__valueType {
+        text-align: center;
+    }
+
+    .modal__valueType > h2 {
+      width: 30%
+    }
+
+    .modal__valueType .modal__isEntry input {
+        width: 30%;
+        margin-bottom: 1.8rem;
+    }
+
+    .modal__submit {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
